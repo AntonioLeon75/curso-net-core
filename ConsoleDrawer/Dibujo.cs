@@ -6,7 +6,7 @@ namespace ConsoleDrawer
 
         public Dibujo()
         {
-            aFiguras = new Lista(10);
+            aFiguras = new Lista(10, typeof(IFigura));
             aFiguras.Add(new Texto(10, 5, "Hola a Todes")) ;
         }
 

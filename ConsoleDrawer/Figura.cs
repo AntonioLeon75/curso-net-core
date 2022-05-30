@@ -1,6 +1,6 @@
 namespace ConsoleDrawer
 {
-    public abstract class Figura
+    public abstract class Figura : IFigura
     {
         public Posicion Pos{ get;}
 
