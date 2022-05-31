@@ -2,11 +2,11 @@ namespace ConsoleDrawer
 {
     public class Dibujo
     {
-        private Lista aFiguras;
+        private Lista<IFigura> aFiguras;
 
         public Dibujo()
         {
-            aFiguras = new Lista(10, typeof(IFigura));
+            aFiguras = new Lista<IFigura>(10);
             aFiguras.Add(new Texto(10, 5, "Hola a Todes")) ;
         }
 
