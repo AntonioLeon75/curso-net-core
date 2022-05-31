@@ -19,7 +19,7 @@ namespace ConsoleDrawer
 
             for(var idx = 0; idx < aFiguras.Count; idx++)
             {
-                var figura = aFiguras.GetAt(idx) as Figura;
+                var figura = aFiguras.GetAt(idx);
                 figura.Dibujar();                
             }
         }
