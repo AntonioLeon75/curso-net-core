@@ -1,3 +1,5 @@
+using System.Collections;
+
 namespace ConsoleDrawer
 {
 
@@ -74,7 +76,7 @@ namespace ConsoleDrawer
         void Add(object item);
     }
 
-    public interface ILista<T>
+    public interface ILista<T> : IEnumerable<T>
     {
         int Count { get; }
         T GetAt(int idx);
@@ -93,6 +95,16 @@ namespace ConsoleDrawer
         void ILista.Add(object item)
         {
             Add((T)item);
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            return new ListaEnumerator<T>(this);
         }
 
         public void Add(T item)

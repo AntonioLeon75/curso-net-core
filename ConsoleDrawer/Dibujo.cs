@@ -8,19 +8,14 @@ namespace ConsoleDrawer
         {
             aFiguras = new Lista<IFigura>(10);
             aFiguras.Add(new Texto(10, 5, "Hola a Todes"));
+            aFiguras.Add(new Cuadrado(2,10));
         }
 
         public void Dibujar()
         {
-            /*foreach(var aFigura in aFiguras)
+            foreach(var aFigura in aFiguras)
             {
                 aFigura?.Dibujar();
-            }*/
-
-            for(var idx = 0; idx < aFiguras.Count; idx++)
-            {
-                var figura = aFiguras.GetAt(idx);
-                figura.Dibujar();                
             }
         }
     }
