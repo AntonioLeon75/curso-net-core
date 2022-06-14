@@ -1,6 +1,6 @@
 namespace ConsoleDrawer
 {
-    public class Texto : Figura
+    public class Texto : Figura, IFigura
     {
         private readonly string theText;
 
