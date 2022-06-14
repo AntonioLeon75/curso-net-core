@@ -9,7 +9,7 @@ namespace ConsoleDrawer
             theText = aText;
 
         }
-        public override void Dibujar()
+        public override void Dibujar() // ver como lo fusionamos
         {
             Console.SetCursorPosition(Pos.Columna, Pos.Fila);
             Console.Write(theText);
