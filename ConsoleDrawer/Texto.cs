@@ -15,7 +15,7 @@ namespace ConsoleDrawer
             Console.Write(theText);
         }
 
-        void fake_fake()
+        void fiki_fake()
         {
             
         }
