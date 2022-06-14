@@ -14,11 +14,5 @@ namespace ConsoleDrawer
             Console.SetCursorPosition(Pos.Columna, Pos.Fila);
             Console.Write(theText);
         }
-
-        void fiki_fake()
-        {
-            
-        }
-
     }
 }
