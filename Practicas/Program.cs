@@ -5,6 +5,7 @@
         static void Main(string[] args)
         {
             bool exit = false;
+            GestorPracticas gestorPracticas = new GestorPracticas();
             
             while( !exit )
             {
@@ -20,6 +21,7 @@
                         break;
                     case "1":
                         Console.WriteLine("Vamos a ver yield");
+                        gestorPracticas.YieldExec();
                         break;
                 }
             }
