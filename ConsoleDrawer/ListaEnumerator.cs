@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace ConsoleDrawer
 {
+    // COMO REFERENCIA PORQUE NO SE USA
     public class ListaEnumerator<T> : IEnumerator<T>, IEnumerator
     {
         private int _idx;
