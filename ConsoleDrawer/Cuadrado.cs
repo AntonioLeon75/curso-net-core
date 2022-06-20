@@ -6,7 +6,7 @@ namespace ConsoleDrawer
 
         public override void Dibujar()
         {
-            throw new NotImplementedException();
+            
         }
 
     }

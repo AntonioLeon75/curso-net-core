@@ -104,7 +104,13 @@ namespace ConsoleDrawer
 
         public IEnumerator<T> GetEnumerator()
         {
-            return new ListaEnumerator<T>(this);
+            foreach (var item in _items)
+            {
+                if (item != null)
+                {
+                    yield return item;
+                }
+            }
         }
 
         public void Add(T item)
