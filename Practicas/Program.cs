@@ -11,6 +11,7 @@
             {
                 Console.WriteLine("0 - Salir");
                 Console.WriteLine("1 - Uso de yield");
+                Console.WriteLine("2 - Uso de delegados");
                 
                 var option = Console.ReadLine();
 
@@ -21,8 +22,12 @@
                         break;
                     case "1":
                         Console.WriteLine("Vamos a ver yield");
-                        gestorPracticas.YieldExec();
+                        gestorPracticas.ExecuteYield();
                         break;
+                    case "2":
+                        Console.WriteLine("Vamos a ver delegados");
+                        gestorPracticas.ExecuteDelegados();
+                        break;                        
                 }
             }
         }
