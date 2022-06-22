@@ -27,10 +27,13 @@ namespace Practicas
             Console.WriteLine("La multiplicación de " + a.ToString() + " por " + b.ToString() + " es " + (a * b).ToString());
         }
 
-        void ExecOperaciones()
+        void ExecOperaciones(int a, int b, Operacion callback)
         {
-            Operacion opDel;
+            callback(a, b);
+        }
 
+        void InvokeOperaciones()
+        {
             Console.WriteLine("Ejemplo de Delegados con operaciones");
 
             for (int i = 0; i <= 30; i++)
@@ -40,13 +43,11 @@ namespace Practicas
 
                 if (i % 3 == 0)
                 {
-                    opDel = Suma;
-                    opDel(rA, rB);
+                    ExecOperaciones(rA, rB, Suma);
                 }
                 else if (i % 5 == 0)
                 {
-                    opDel = Multiplica;
-                    opDel(rA, rB);
+                    ExecOperaciones(rA, rB, Multiplica);
                 }
 
                 Thread.Sleep(500);
@@ -56,7 +57,7 @@ namespace Practicas
         public void ExecMainDelegados()
         {
             ExecBasicPractice();
-            ExecOperaciones();
+            InvokeOperaciones();
         }
     }
 }
