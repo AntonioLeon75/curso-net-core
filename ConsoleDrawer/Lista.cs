@@ -76,12 +76,18 @@ namespace ConsoleDrawer
         void Add(object item);
     }
 
+    public delegate bool PredicateDelegate<T>(T item);
+
     public interface ILista<T> : IEnumerable<T>
     {
         int Count { get; }
         T GetAt(int idx);
         void Add(T item);
+
+        IEnumerable<T> SearchByDelegate(PredicateDelegate<T> predicate);
+        IEnumerable<T> FindPredicate(IPredicate<T> predicate);
     }
+
     public class Lista<T> : ILista<T>, ILista
     {
         private readonly T[] _items;
@@ -132,6 +138,28 @@ namespace ConsoleDrawer
         object ILista.GetAt(int idx)
         {
             return _items[idx];
+        }
+
+        public IEnumerable<T> FindPredicate(IPredicate<T> predicate)
+        {
+            foreach(var current in _items)
+            {
+                if(current != null && predicate.Match(current))
+                {
+                    yield return current;                    
+                }
+            }
+        }
+
+        public IEnumerable<T> SearchByDelegate(PredicateDelegate<T> predicate)
+        {
+            foreach(var current in _items)
+            {
+                if(current != null && predicate(current))
+                {
+                    yield return current;                    
+                }
+            }
         }
     }
 
