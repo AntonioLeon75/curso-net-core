@@ -19,12 +19,13 @@ namespace ConsoleDrawer
 
             //var odds = listaInt.FindPredicate(new PredicateIntOdd());
 
-            var odds = listaInt.SearchByDelegate(IsOdd);
-        }
+            PredicateDelegate<int> p = delegate (int i) { return i % 2 == 0 ;};
 
-        private bool IsOdd(int num)
-        {
-            return num % 2 == 0;
+            PredicateDelegate<int> p2 = i => i % 2 == 0;
+
+            //var odds = listaInt.SearchByDelegate(delegate (int i) { return i % 2 == 0; });
+            var odds = listaInt.SearchByDelegate( i => i % 2 == 0 );
+            var biggerThanThree = listaInt.SearchByDelegate( i => i > 3 );
         }
 
         public void Foo2(Lista<IFigura> figuras)
