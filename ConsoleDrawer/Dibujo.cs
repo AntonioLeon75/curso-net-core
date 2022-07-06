@@ -25,6 +25,11 @@ namespace ConsoleDrawer
 
             //var odds = listaInt.SearchByDelegate(delegate (int i) { return i % 2 == 0; });
             var odds = listaInt.SearchByDelegate( i => i % 2 == 0 );
+
+            //Delegado genérico Func
+            Func<int, bool> func = i => i % 2 == 0;
+            odds = listaInt.SearchByDelegate( func );
+
             var biggerThanThree = listaInt.SearchByDelegate( i => i > 3 );
         }
 

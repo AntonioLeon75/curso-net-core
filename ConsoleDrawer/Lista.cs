@@ -84,7 +84,8 @@ namespace ConsoleDrawer
         T GetAt(int idx);
         void Add(T item);
 
-        IEnumerable<T> SearchByDelegate(PredicateDelegate<T> predicate);
+        //IEnumerable<T> SearchByFunc(Func<T,bool> func);
+        IEnumerable<T> SearchByDelegate(Func<T, bool> predicate);
         IEnumerable<T> FindPredicate(IPredicate<T> predicate);
     }
 
@@ -151,7 +152,7 @@ namespace ConsoleDrawer
             }
         }
 
-        public IEnumerable<T> SearchByDelegate(PredicateDelegate<T> predicate)
+        public IEnumerable<T> SearchByDelegate(Func<T, bool> predicate)
         {
             foreach(var current in _items)
             {
