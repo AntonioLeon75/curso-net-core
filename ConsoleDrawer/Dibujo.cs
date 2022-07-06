@@ -10,6 +10,12 @@ namespace ConsoleDrawer
             _figuras.Add(new Texto(10, 5, "Hola a Todes"));
             _figuras.Add(new Cuadrado(2,10));
 
+            _figuras.GetFirst().Dibujar();
+
+            var isnum = StringUtils.IsNumber("3423d4");
+            isnum = "3423d4".IsNumber();
+
+/* Código utilizado para ver delegados que no se sigue usando en el curso
             var listaInt = new Lista<int>(10);
             listaInt.Add(1);
             listaInt.Add(2);
@@ -31,16 +37,7 @@ namespace ConsoleDrawer
             odds = listaInt.SearchByDelegate( func );
 
             var biggerThanThree = listaInt.SearchByDelegate( i => i > 3 );
-        }
-
-        public void Foo2(Lista<IFigura> figuras)
-        {
-
-        }
-
-        public void Foo(IEnumerable<IFigura> figuras)
-        {
-            foreach(var f in figuras){}
+*/
         }
 
         public void Dibujar()
