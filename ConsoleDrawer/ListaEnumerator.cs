@@ -20,9 +20,9 @@ namespace ConsoleDrawer
             get { return _lista.GetAt(_idx); }
         }
 
-        object IEnumerator.Current
+        object? IEnumerator.Current
         {
-            get { return Current; }
+            get { return Current == null ? default(T) : Current; }
         }
  
         public void Dispose()

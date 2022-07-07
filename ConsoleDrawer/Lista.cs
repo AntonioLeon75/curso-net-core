@@ -99,6 +99,14 @@ namespace ConsoleDrawer
             Count = 0;
         }
 
+        public T this [int idx]
+        {
+            get
+            {
+                return _items[idx];
+            }
+        }
+
         void ILista.Add(object item)
         {
             Add((T)item);

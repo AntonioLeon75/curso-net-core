@@ -2,18 +2,22 @@ namespace ConsoleDrawer
 {
     public class Dibujo
     {
-        private Lista<IFigura> _figuras;
+        private List<IFigura> _figuras;
 
         public Dibujo()
         {
-            _figuras = new Lista<IFigura>(10);
+            _figuras = new List<IFigura>(10);
             _figuras.Add(new Texto(10, 5, "Hola a Todes"));
             _figuras.Add(new Cuadrado(2,10));
 
-            _figuras.GetFirst().Dibujar();
+            var figura = _figuras[0];
+
+            // Métodos de extensión
+            //_figuras.GetFirst()?.Dibujar();
 
             var isnum = StringUtils.IsNumber("3423d4");
             isnum = "3423d4".IsNumber();
+            //-------------------------------------------------
 
 /* Código utilizado para ver delegados que no se sigue usando en el curso
             var listaInt = new Lista<int>(10);
