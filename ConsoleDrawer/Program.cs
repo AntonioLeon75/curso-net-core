@@ -22,7 +22,8 @@
             {
                 Dibujo aDibujo = new Dibujo();
 
-                
+                aDibujo.AddFigura(FiguraFactory.Instance.GetTexto("Ay TUUUUUU", 10, 10));
+                aDibujo.AddFigura(FiguraFactory.Instance.GetCuadrado(10, 10));
 
                 aDibujo.Dibujar();
                 Console.Read();

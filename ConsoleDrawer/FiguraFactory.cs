@@ -2,10 +2,21 @@ namespace ConsoleDrawer
 {
     public class FiguraFactory
     {
+        private static FiguraFactory _instance;
         private int numCuadrados;
         private int numTextos;
 
-        public FiguraFactory()
+        public static FiguraFactory Instance
+        {
+            get{ return _instance; }
+        }
+
+        static FiguraFactory()
+        {
+            _instance = new FiguraFactory();
+        }
+        
+        private FiguraFactory()
         {
             numCuadrados = 0;
             numTextos = 0;
