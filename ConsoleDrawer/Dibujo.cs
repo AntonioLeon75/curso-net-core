@@ -2,15 +2,14 @@ namespace ConsoleDrawer
 {
     public class Dibujo
     {
-        private List<IFigura> _figuras;
+        private readonly List<IFigura> _figuras;
 
         public Dibujo()
         {
             _figuras = new List<IFigura>(10);
-            _figuras.Add(new Texto(10, 5, "Hola a Todes"));
-            _figuras.Add(new Cuadrado(2,10));
 
-            var figura = _figuras[0];
+            // Demostración de método indizador
+            //var figura = _figuras[0];
 
             // Métodos de extensión
             //_figuras.GetFirst()?.Dibujar();
@@ -42,6 +41,11 @@ namespace ConsoleDrawer
 
             var biggerThanThree = listaInt.SearchByDelegate( i => i > 3 );
 */
+        }
+
+        public void AddFigura(IFigura figura)
+        {
+            _figuras.Add(figura);
         }
 
         public void Dibujar()

@@ -4,8 +4,11 @@ namespace ConsoleDrawer
     {
         public Posicion Pos{ get;}
 
-        public Figura(int aFila, int aColumna)
+        public string Name{ get;}
+
+        public Figura(string name, int aFila, int aColumna)
         {
+            Name = name;
             Pos = new Posicion(aFila, aColumna);
         }
 

@@ -4,7 +4,7 @@ namespace ConsoleDrawer
     {
         private readonly string theText;
 
-        public Texto( int aFila, int aColumna, string aText) : base (aFila, aColumna)
+        public Texto( string name, int aFila, int aColumna, string aText) : base (name, aFila, aColumna)
         {
             theText = aText;
 

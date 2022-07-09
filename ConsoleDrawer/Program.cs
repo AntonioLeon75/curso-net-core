@@ -21,6 +21,9 @@
             if(info.KeyChar == '1')
             {
                 Dibujo aDibujo = new Dibujo();
+
+                
+
                 aDibujo.Dibujar();
                 Console.Read();
                 return true;
