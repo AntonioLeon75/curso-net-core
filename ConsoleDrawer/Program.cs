@@ -23,8 +23,12 @@
                 Dibujo aDibujo = new Dibujo();
 
                 aDibujo.AddFigura(FiguraFactory.Instance.GetTexto("Ay TUUUUUU", 10, 10));
-                aDibujo.AddFigura(FiguraFactory.Instance.GetCuadrado(10, 10));
+                aDibujo.AddFigura(FiguraFactory.Instance.GetCuadrado(1, 3));
 
+                var test = aDibujo["Texto 0"];
+
+                aDibujo.GetByName<Cuadrado>("Cuadrado 0");
+                
                 aDibujo.Dibujar();
                 Console.Read();
                 return true;

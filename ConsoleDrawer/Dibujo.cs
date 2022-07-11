@@ -18,30 +18,45 @@ namespace ConsoleDrawer
             isnum = "3423d4".IsNumber();
             //-------------------------------------------------
 
-/* Código utilizado para ver delegados que no se sigue usando en el curso
-            var listaInt = new Lista<int>(10);
-            listaInt.Add(1);
-            listaInt.Add(2);
-            listaInt.Add(3);
-            listaInt.Add(5);
-            listaInt.Add(6);
+            /* Código utilizado para ver delegados que no se sigue usando en el curso
+                        var listaInt = new Lista<int>(10);
+                        listaInt.Add(1);
+                        listaInt.Add(2);
+                        listaInt.Add(3);
+                        listaInt.Add(5);
+                        listaInt.Add(6);
 
-            //var odds = listaInt.FindPredicate(new PredicateIntOdd());
+                        //var odds = listaInt.FindPredicate(new PredicateIntOdd());
 
-            PredicateDelegate<int> p = delegate (int i) { return i % 2 == 0 ;};
+                        PredicateDelegate<int> p = delegate (int i) { return i % 2 == 0 ;};
 
-            PredicateDelegate<int> p2 = i => i % 2 == 0;
+                        PredicateDelegate<int> p2 = i => i % 2 == 0;
 
-            //var odds = listaInt.SearchByDelegate(delegate (int i) { return i % 2 == 0; });
-            var odds = listaInt.SearchByDelegate( i => i % 2 == 0 );
+                        //var odds = listaInt.SearchByDelegate(delegate (int i) { return i % 2 == 0; });
+                        var odds = listaInt.SearchByDelegate( i => i % 2 == 0 );
 
-            //Delegado genérico Func
-            Func<int, bool> func = i => i % 2 == 0;
-            odds = listaInt.SearchByDelegate( func );
+                        //Delegado genérico Func
+                        Func<int, bool> func = i => i % 2 == 0;
+                        odds = listaInt.SearchByDelegate( func );
 
-            var biggerThanThree = listaInt.SearchByDelegate( i => i > 3 );
-*/
+                        var biggerThanThree = listaInt.SearchByDelegate( i => i > 3 );
+            */
         }
+
+        public IFigura this[string name]
+        {
+            get
+            {
+                return _figuras.FirstOrDefault(x => x.Name == name);
+            }
+        }
+
+        public T? GetByName<T>(string name)
+            where T : class, IFigura
+        {
+            return this[name] as T;
+        }
+
 
         public void AddFigura(IFigura figura)
         {
@@ -50,7 +65,7 @@ namespace ConsoleDrawer
 
         public void Dibujar()
         {
-            foreach(var aFigura in _figuras)
+            foreach (var aFigura in _figuras)
             {
                 aFigura?.Dibujar();
             }
