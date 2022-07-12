@@ -1,3 +1,5 @@
+using Newtonsoft.Json;
+
 namespace ConsoleDrawer
 {
     public class Dibujo
@@ -51,6 +53,24 @@ namespace ConsoleDrawer
             }
         }
 
+        public IEnumerable<string> Names
+        {
+            get
+            {
+                return _figuras
+                .Select(f => f.Name)
+                .OrderBy(n => n);
+            }
+        }
+
+        public IEnumerable<IFigura> Figuras
+        {
+            get
+            {
+                return _figuras;
+            }
+        }
+
         public T? GetByName<T>(string name)
             where T : class, IFigura
         {
@@ -70,6 +90,20 @@ namespace ConsoleDrawer
                 aFigura?.Dibujar();
             }
         }
+
+        public void Save(string path)
+        {
+            var cuadrados = _figuras.OfType<Cuadrado>();
+            var textos = _figuras.OfType<Texto>();
+
+            var resultado = new {
+                Cuadrados = cuadrados,
+                Textos = textos
+            };
+
+            var json = JsonConvert.SerializeObject(resultado);
+        }
+
     }
 
 }
