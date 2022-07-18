@@ -71,18 +71,29 @@ namespace ConsoleDrawer
             }
         }
 
+        public (string city, Type tipo) GetTupla()
+        {
+            return ("Toledo", typeof(string));
+        }
+
+        public IEnumerable<(string name, Type tipo)> GetFiguraInfo()
+        {
+            foreach(var figura in _figuras)
+            {
+                yield return (figura.Name, figura.GetType());
+            }
+        }
+
         public T? GetByName<T>(string name)
             where T : class, IFigura
         {
             return this[name] as T;
         }
 
-
         public void AddFigura(IFigura figura)
         {
             _figuras.Add(figura);
         }
-
         public void Dibujar()
         {
             foreach (var aFigura in _figuras)
@@ -98,12 +109,13 @@ namespace ConsoleDrawer
 
             var resultado = new {
                 Cuadrados = cuadrados,
-                Textos = textos
+                Textos = textos,
+                Count = _figuras.Count()
             };
 
             var json = JsonConvert.SerializeObject(resultado);
+            File.WriteAllText(path, json);
         }
-
     }
 
 }

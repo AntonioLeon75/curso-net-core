@@ -1,0 +1,1 @@
+{"Cuadrados":[{"Pos":{"Fila":1,"Columna":3},"Name":"Cuadrado 0"}],"Textos":[{"Pos":{"Fila":10,"Columna":10},"Name":"Texto 0"}],"Count":2}
